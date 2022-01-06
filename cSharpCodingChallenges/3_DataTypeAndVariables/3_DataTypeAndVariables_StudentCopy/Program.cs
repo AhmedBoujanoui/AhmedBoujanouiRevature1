@@ -6,11 +6,9 @@ namespace _3_DataTypeAndVariablesChallenge
     {
         public static void Main(string[] args)
         {
-            //
-            //
-            // Insert code here.
-            //
-            //
+            PrintValues(int a);
+            StringToInt(string, "25");
+
         }
 
         /// <summary>
@@ -25,7 +23,22 @@ namespace _3_DataTypeAndVariablesChallenge
         /// <returns></returns>
         public static string PrintValues(object obj)
         {
-            throw new NotImplementedException($"PrintValues() has not been implemented");
+            switch(obj)
+            {
+                case int:
+                    return Console.WriteLine($"Data type => {int}");
+                    break;
+                case (string):
+                    return Console.WriteLine($"Data type => {string}");
+                    break;
+                case (decimal):
+                    return Console.WriteLine($"Data type => {decimal}");
+                    break;
+                default:
+                    break;
+                
+
+            }
         }
 
         /// <summary>
@@ -39,8 +52,22 @@ namespace _3_DataTypeAndVariablesChallenge
         /// <returns></returns>
         public static int? StringToInt(string numString)
         {
-            throw new NotImplementedException($"StringToInt() has not been implemented");
 
-        }
+
+            int number;
+
+            bool success = int.TryParse(numString, out number);
+            if (success)
+            {
+                Console.WriteLine($"Converted '{numString}' to {number}.");
+            }
+            else
+            {
+                Console.WriteLine($"Attempted conversion of '{numString ?? "<null>"}' failed.");
+            }
+            //Int32.TryParse(numString)
+            //throw new NotImplementedException($"StringToInt() has not been implemented");
+
+        }   
     }// end of class
 }// End of Namespace

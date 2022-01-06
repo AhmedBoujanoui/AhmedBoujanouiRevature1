@@ -2,12 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
 namespace _11_ArraysAndListsChallenge
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            int[] array = {1,2,3,4};
+            var myArrayList = new ArrayList()
+            {
+                1, 2.0, 'x', 3, 'y', 3.3
+            };
+            Console.WriteLine(AverageOfValues(int[] array));
+            Console.WriteLine(SunIsShining(x));
 
         }//EoM
 
@@ -19,7 +27,15 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static double AverageOfValues(int[] array)
         {
-            throw new NotImplementedException("AverageOfValues has not been implemented yet.");
+            double average = 0;
+            int sum = 0;
+            for(int i =0;  i < array.Length; i++)
+            {
+                sum = sum +array[i];
+
+            }
+            return average = sum/array.Length;
+
         }
 
         /// <summary>
@@ -30,7 +46,12 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static int[] SunIsShining(int[] x)
         {
-            throw new NotImplementedException("SunIsShining has not been implemented yet.");
+            for(int i =0; i< x.Length; i++)
+            {
+                x[i]= x[i]+2;
+
+            }
+            return x;
         }
 
         /// <summary>
@@ -42,7 +63,14 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static decimal ArrayListAvg(ArrayList myArrayList)
         {
-            throw new NotImplementedException("ArrayListAvg has not been implemented yet.");
+            decimal average =0;
+            double sum =0;
+            for (int i = 0 ; i < myArrayList.Count; i++)
+            {
+                sum = sum + myArrayList[i];
+            }
+            return average = (sum/myArrayList.Count);
+            
         }
 
         /// <summary>
@@ -52,7 +80,15 @@ namespace _11_ArraysAndListsChallenge
         /// <param name="myArray1"></param>
         public static int ListAscendingOrder(List<int> scores, int yourScore)
         {
-            throw new NotImplementedException("ListAscendingOrder has not been implemented yet.");
+            scores.Add(yourScore);
+            int rank =0;
+            var result = scores.OrderBy(num=>num);
+            for (int i = 0; i < result.Count; i++ )
+            {
+                if( result[i] == yourScore)
+                    rank = i;
+            }
+            return rank;
         }
 
         /// <summary>
@@ -64,7 +100,9 @@ namespace _11_ArraysAndListsChallenge
         /// <returns></returns>
         public static bool FindStringInList(List<string> myArray2, string word)
         {
-            throw new NotImplementedException("FindStringInList has not been implemented yet.");
+            if(bool exists = myArray2.Any(s => myArray2.Contains(word)))
+                    return true;
+
         }
     }//EoP
 }// EoN
